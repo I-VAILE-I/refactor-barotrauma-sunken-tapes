@@ -1,0 +1,90 @@
+- identifier: blank
+  name: Blank Tape
+- identifier: dmx
+  name: DMX - X Gon Give It To Ya
+- identifier: dmxcut
+  name: DMX Carnage Cut
+- identifier: blade
+  name: Vampire Dance Club
+- identifier: atarispeed
+  name: Atari Teenage Riot - SPEED
+- identifier: ddt
+  name: Dragostea Din Tei
+- identifier: java
+  name: Kenny Larkin - Java
+- identifier: dm
+  name: Menace Ruine - Dark Mother
+- identifier: swgd
+  name: Sewer Goddess - Chained To The Edge Of Existence
+- identifier: urfaust
+  name: Urfaust - Die Kalte Teufelsfaust
+- identifier: rainbowstalin
+  name: Rainbow Stalin
+- identifier: nazare
+  name: Альянс - На заре
+- identifier: vjeranpas
+  name: Termiti - Vjeran pas
+- identifier: put
+  name: Morbidi I Mnoći - Put
+- identifier: shanty1
+  name: Doodle Let Me Go
+- identifier: shanty2
+  name: Rolling Down To Old Maui
+- identifier: shanty3
+  name: Roll the Old Chariot
+- identifier: shanty4
+  name: Weigh, Hey and up She Rises
+- identifier: shanty5
+  name: Roll Northumbria
+- identifier: rum
+  name: 15 Men and a Bottle of Rum
+- identifier: biosphere
+  name: Biosphere - Daphnis 26
+- identifier: bedouin
+  name: Bedouin - Set The Control For The Heart Of The Sun
+- identifier: deadmeadow
+  name: Dead Meadow - Me and the Devil Blues
+- identifier: hardbass
+  name: Hardbass
+- identifier: ira
+  name: Come out and Fight
+- identifier: tha
+  name: Aphex Twin - Tha
+- identifier: immigrantsong
+  name: Led Zeppelin - Immigrant Song
+- identifier: redoctober
+  name: The Hunt for Red October
+- identifier: shoegazeprincessa
+  name: Шугейз-принцесса
+- identifier: rusija
+  name: УБИЙЦЫ - Россия
+- identifier: schritte_08080
+  name: Inka - Schritte (08080 remix)
+- identifier: schritte
+  name: Inka - Schritte
+- identifier: wacky_tape
+  name: Neznani Rock Fotri
+- identifier: 08080_minor_threat
+  name: 08080 - Minor Threat
+- identifier: 08080_canyons_joyride
+  name: 08080 - Canyon's Joyride
+- identifier: sigma
+  name: ∑
+- identifier: devilinthedetails
+  name: Boards of Canada - The Devil Is in the Details
+- identifier: alphabrain
+  name: L.O.T.I.O.N. Multinational Corporation - Alphabrain
+- identifier: underwaterlove
+  name: Smoke City - Underwater Love
+- identifier: theroom
+  name: The Room
+- identifier: theshadowsareyou
+  name: Kiss The Anus Of A Black Cat - The Shadows Are You
+- identifier: balans
+  name: Balans - Sam Naprej
+- identifier: diodiver
+  name: Dio - Holy Diver
+- identifier: rationalgaze
+  name: Meshuggah - Rational Gaze
+- identifier: dgrips1
+  name: Death Grips - The Cage

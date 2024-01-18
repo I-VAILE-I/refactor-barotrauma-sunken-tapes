@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+{% if config['slug'] != "sunken_tapes" %}<!--This mod is based on Sunken Tapes. See https://git.kompot.si/jaka/barotrauma-sunken-tapes and https://steamcommunity.com/sharedfiles/filedetails/?id=2616577901 for the source material and code generator.-->{% else %}<!--Code licensed under GPLv3 and generated with a script available at https://git.kompot.si/jaka/barotrauma-sunken-tapes-->{% endif %}
+<Items>
+  <Item name="Boombox" cargocontaineridentifier="metalcrate" identifier="{% if config['slug'] != "sunken_tapes" %}{{ config["slug"] }}-{% endif %}boombox" category="Equipment" Tags="mediumitem,boombox,sunken-tapes-player" scale="0.5" description="" price="850" impactsoundtag="impact_metal_light" isshootable="true" HideConditionBar="true">
+    <PreferredContainer primary="abandonedcrewcab" spawnprobability="0.1" />
+    <PreferredContainer primary="outpostcrewcabinet" spawnprobability="0.1" />
+    <Price baseprice="500" soldeverywhere="false">
+      <Price locationtype="outpost" multiplier="1" minavailable="1" />
+      <Price locationtype="city" multiplier="0.7" minavailable="1" />
+      <Price locationtype="research" multiplier="1.5" sold="false" />
+      <Price locationtype="military" multiplier="1.5" sold="false" />
+      <Price locationtype="mine" multiplier="1.5" sold="false" />
+    </Price>
+    <Deconstruct time="20">
+      <Item identifier="aluminium" />
+      <Item identifier="copper" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="45">
+      <RequiredSkill identifier="mechanical" level="45" />
+      <RequiredSkill identifier="electrical" level="55" />
+      <RequiredItem identifier="aluminium" />
+      <RequiredItem identifier="copper" />
+      <RequiredItem identifier="plastic" />
+      <RequiredItem identifier="fpgacircuit" />
+    </Fabricate>
+    <Upgrade gameversion="0.9.2.0" scale="0.5" />
+    <InventoryIcon texture="%ModDir%/players_icons.png" sourcerect="0,0,64,42" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/players_sprites.png" sourcerect="0,0,117,76" depth="0.55" origin="0.5,0.5" />
+    <Body width="117" height="76" />
+    <LightComponent LightColor="0.0,0.85,0.0,0.7" range="4" powerconsumption="0" blinkfrequency="0" IsOn="false" canbeselected="false"></LightComponent>
+    <CustomInterface canbeselected="true" drawhudwhenequipped="true" allowuioverlap="true" msg="Equip to control">
+      <GuiFrame relativesize="0.10,0.07" anchor="CenterLeft" pivot="BottomLeft" relativeoffset="0.006,-0.05" style="ItemUI" />
+      <TickBox text="Play">
+        <StatusEffect type="OnUse" targettype="This" IsOn="true">
+          <Conditional IsOn="false" />
+          <sound file="%ModDir%/sound_effects/boombox_play_cassette.ogg" type="OnUse" range="300" volume="1.0" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" targettype="This" IsOn="false">
+          <Conditional IsOn="true" />
+          <sound file="%ModDir%/sound_effects/boombox_play_cassette.ogg" type="OnUse" range="300" volume="1.0" />
+          <Use />
+        </StatusEffect>
+      </TickBox>
+    </CustomInterface>
+    <Holdable slots="RightHand,LeftHand" aimable="false" holdpos="5,-65" holdangle="0" aimpos="5,32" handle1="0,32" handle2="0,32" swingamount="25,7" swingspeed="0.5" swingwhenusing="true" msg="ItemMsgPickupSelect">
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </Holdable>
+    <ItemContainer hideitems="true" drawinventory="true" capacity="1" maxstacksize="1" slotsperrow="6" itempos="0,0" iteminterval="0,0" itemrotation="0" canbeselected="false" containedspritedepth="0.79">
+      <StatusEffect type="OnUse" targettype="Contained">
+        <Use />
+      </StatusEffect>
+      <Containable items="cassette">
+      </Containable>
+    </ItemContainer>
+  </Item>
+
+  <Item name="Walkman BARO Brown" cargocontaineridentifier="metalcrate" identifier="{% if config['slug'] != "sunken_tapes" %}{{ config["slug"] }}-{% endif %}walkman-brown" category="Equipment" Tags="smallitem,walkman,sunken-tapes-player" scale="0.5" description="" price="350" impactsoundtag="impact_metal_light" isshootable="true" HideConditionBar="true">
+    <PreferredContainer primary="abandonedcrewcab" spawnprobability="0.1" />
+    <PreferredContainer primary="outpostcrewcabinet" spawnprobability="0.1" />
+    <Price baseprice="300" soldeverywhere="false">
+      <Price locationtype="outpost" multiplier="1" minavailable="1" />
+      <Price locationtype="city" multiplier="0.7" minavailable="1" />
+      <Price locationtype="research" multiplier="1.1" sold="false" />
+      <Price locationtype="military" multiplier="1.1" sold="false" />
+      <Price locationtype="mine" multiplier="1.1" sold="false" />
+    </Price>
+    <Deconstruct time="20"></Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="45">
+      <RequiredSkill identifier="mechanical" level="45" />
+      <RequiredSkill identifier="electrical" level="55" />
+      <RequiredItem identifier="aluminium" />
+      <RequiredItem identifier="copper" />
+      <RequiredItem identifier="plastic" />
+      <RequiredItem identifier="fpgacircuit" />
+    </Fabricate>
+    <Upgrade gameversion="0.9.2.0" scale="0.5" />
+    <InventoryIcon texture="%ModDir%/players_icons.png" sourcerect="64,0,64,40" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/players_sprites.png" sourcerect="117,0,51,33" depth="0.55" origin="0.5,0.5" />
+    <Body width="51" height="33" />
+    <LightComponent LightColor="0.0,0.0,0.0,0.0" range="1" powerconsumption="0" blinkfrequency="0" IsOn="false" canbeselected="false"></LightComponent>
+    <CustomInterface canbeselected="true" drawhudwhenequipped="true" allowuioverlap="true" msg="Equip to control">
+      <GuiFrame relativesize="0.10,0.07" anchor="CenterLeft" pivot="BottomLeft" relativeoffset="0.006,-0.05" style="ItemUI" />
+      <TickBox text="Play">
+        <StatusEffect type="OnUse" targettype="This" IsOn="true">
+          <Conditional IsOn="false" />
+          <sound file="%ModDir%/sound_effects/boombox_play_cassette.ogg" type="OnUse" range="300" volume="1.0" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" targettype="This" IsOn="false" >
+          <Conditional IsOn="true" />
+          <sound file="%ModDir%/sound_effects/boombox_play_cassette.ogg" type="OnUse" range="300" volume="1.0" />
+          <Use />
+        </StatusEffect>
+      </TickBox>
+    </CustomInterface>
+    <Holdable slots="RightHand,LeftHand,Any" holdpos="5,-75" holdangle="0" aimpos="0,-45" handle1="-5,15" handle2="-5,15" swingamount="25,8" swingspeed="0.5" swingwhenusing="true" msg="ItemMsgPickupSelect">
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </Holdable>
+    <ItemContainer itempos="3,-3" hideitems="false" drawinventory="true" capacity="1" maxstacksize="1" slotsperrow="1" iteminterval="0,0" itemrotation="180" canbeselected="false" containedspritedepth="0.6">
+      <StatusEffect type="OnUse" targettype="Contained" >
+        <Use />
+      </StatusEffect>
+      <Containable items="cassette">
+      </Containable>
+    </ItemContainer>
+  </Item>
+
+  <Item name="Walkman BARO Silver" cargocontaineridentifier="metalcrate" identifier="{% if config['slug'] != "sunken_tapes" %}{{ config["slug"] }}-{% endif %}walkman-silver" category="Equipment" Tags="smallitem,walkman,sunken-tapes-player" scale="0.5" description="" price="450" impactsoundtag="impact_metal_light" isshootable="true" HideConditionBar="true">
+    <PreferredContainer primary="abandonedcrewcab" spawnprobability="0.1" />
+    <PreferredContainer primary="outpostcrewcabinet" spawnprobability="0.1" />
+    <Price baseprice="450" soldeverywhere="false">
+      <Price locationtype="outpost" multiplier="1" sold="false" />
+      <Price locationtype="city" multiplier="0.7" sold="false" />
+      <Price locationtype="research" multiplier="1.0" minavailable="1" />
+      <Price locationtype="military" multiplier="1.1" sold="false" />
+      <Price locationtype="mine" multiplier="1.1" sold="false" />
+    </Price>
+    <Deconstruct time="20"></Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="45">
+      <RequiredSkill identifier="mechanical" level="45" />
+      <RequiredSkill identifier="electrical" level="55" />
+      <RequiredItem identifier="aluminium" />
+      <RequiredItem identifier="copper" />
+      <RequiredItem identifier="plastic" />
+      <RequiredItem identifier="fpgacircuit" />
+    </Fabricate>
+    <Upgrade gameversion="0.9.2.0" scale="0.5" />
+    <InventoryIcon texture="%ModDir%/players_icons.png" sourcerect="128,0,64,40" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/players_sprites.png" sourcerect="168,0,51,33" depth="0.55" origin="0.5,0.5" />
+    <Body width="51" height="33" />
+    <LightComponent LightColor="0.0,0.0,0.0,0.0" range="1" powerconsumption="0" blinkfrequency="0" IsOn="false" canbeselected="false"></LightComponent>
+    <CustomInterface canbeselected="true" drawhudwhenequipped="true" allowuioverlap="true" msg="Equip to control">
+      <GuiFrame relativesize="0.10,0.07" anchor="CenterLeft" pivot="BottomLeft" relativeoffset="0.006,-0.05" style="ItemUI" />
+      <TickBox text="Play">
+        <StatusEffect type="OnUse" targettype="This" IsOn="true">
+          <Conditional IsOn="false" />
+          <sound file="%ModDir%/sound_effects/boombox_play_cassette.ogg" type="OnUse" range="300" volume="1.0" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" targettype="This" IsOn="false">
+          <Conditional IsOn="true" />
+          <sound file="%ModDir%/sound_effects/boombox_play_cassette.ogg" type="OnUse" range="300" volume="1.0" />
+          <Use />
+        </StatusEffect>
+      </TickBox>
+    </CustomInterface>
+    <Holdable slots="RightHand,LeftHand,Any" holdpos="5,-75" holdangle="0" aimpos="0,-45" handle1="-5,15" handle2="-5,15" swingamount="25,8" swingspeed="0.5" swingwhenusing="true" msg="ItemMsgPickupSelect">
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </Holdable>
+    <ItemContainer itempos="3,-3" hideitems="false" drawinventory="true" capacity="1" maxstacksize="1" slotsperrow="1" iteminterval="0,0" itemrotation="180" canbeselected="false" containedspritedepth="0.6">
+      <StatusEffect type="OnUse" targettype="Contained">
+        <Use />
+      </StatusEffect>
+      <Containable items="cassette">
+      </Containable>
+    </ItemContainer>
+  </Item>
+
+  <Item name="Walkman BARO Black" cargocontaineridentifier="metalcrate" identifier="{% if config['slug'] != "sunken_tapes" %}{{ config["slug"] }}-{% endif %}walkman-black" category="Equipment" Tags="smallitem,walkman,sunken-tapes-player" scale="0.5" description="" price="450" impactsoundtag="impact_metal_light" isshootable="true" HideConditionBar="true">
+    <PreferredContainer primary="abandonedcrewcab" spawnprobability="0.1" />
+    <PreferredContainer primary="outpostcrewcabinet" spawnprobability="0.1" />
+    <Price baseprice="450" soldeverywhere="false">
+      <Price locationtype="outpost" multiplier="1" sold="false" />
+      <Price locationtype="city" multiplier="0.7" sold="false" />
+      <Price locationtype="research" multiplier="1.1" sold="false" />
+      <Price locationtype="military" multiplier="1.1" sold="false" />
+      <Price locationtype="mine" multiplier="1.0" minavailable="1" />
+    </Price>
+    <Deconstruct time="20"></Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="45">
+      <RequiredSkill identifier="mechanical" level="45" />
+      <RequiredSkill identifier="electrical" level="55" />
+      <RequiredItem identifier="aluminium" />
+      <RequiredItem identifier="copper" />
+      <RequiredItem identifier="plastic" />
+      <RequiredItem identifier="fpgacircuit" />
+    </Fabricate>
+    <Upgrade gameversion="0.9.2.0" scale="0.5" />
+    <InventoryIcon texture="%ModDir%/players_icons.png" sourcerect="192,0,64,40" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/players_sprites.png" sourcerect="219,0,51,33" depth="0.55" origin="0.5,0.5" />
+    <Body width="51" height="33" />
+    <LightComponent LightColor="0.0,0.0,0.0,0.0" range="1" powerconsumption="0" blinkfrequency="0" IsOn="false" canbeselected="false"></LightComponent>
+    <CustomInterface canbeselected="true" drawhudwhenequipped="true" allowuioverlap="true" msg="Equip to control">
+      <GuiFrame relativesize="0.10,0.07" anchor="CenterLeft" pivot="BottomLeft" relativeoffset="0.006,-0.05" style="ItemUI" />
+      <TickBox text="Play">
+        <StatusEffect type="OnUse" targettype="This" IsOn="true">
+          <Conditional IsOn="false" />
+          <sound file="%ModDir%/sound_effects/boombox_play_cassette.ogg" type="OnUse" range="300" volume="1.0" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" targettype="This" IsOn="false">
+          <Conditional IsOn="true" />
+          <sound file="%ModDir%/sound_effects/boombox_play_cassette.ogg" type="OnUse" range="300" volume="1.0" />
+          <Use />
+        </StatusEffect>
+      </TickBox>
+    </CustomInterface>
+    <Holdable slots="RightHand,LeftHand,Any" holdpos="5,-75" holdangle="0" aimpos="0,-45" handle1="-5,15" handle2="-5,15" swingamount="25,8" swingspeed="0.5" swingwhenusing="true" msg="ItemMsgPickupSelect">
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </Holdable>
+    <ItemContainer itempos="3,-3" hideitems="false" drawinventory="true" capacity="1" maxstacksize="1" slotsperrow="1" iteminterval="0,0" itemrotation="180" canbeselected="false" containedspritedepth="0.6">
+      <StatusEffect type="OnUse" targettype="Contained">
+        <Use />
+      </StatusEffect>
+      <Containable items="cassette">
+      </Containable>
+    </ItemContainer>
+  </Item>
+
+  <Item name="Walkman BARO Blue" cargocontaineridentifier="metalcrate" identifier="{% if config['slug'] != "sunken_tapes" %}{{ config["slug"] }}-{% endif %}walkman-blue" category="Equipment" Tags="smallitem,walkman,sunken-tapes-player" scale="0.5" description="" price="450" impactsoundtag="impact_metal_light" isshootable="true" HideConditionBar="true">
+    <PreferredContainer primary="abandonedcrewcab" spawnprobability="0.1" />
+    <PreferredContainer primary="outpostcrewcabinet" spawnprobability="0.1" />
+    <Price baseprice="450" soldeverywhere="false">
+      <Price locationtype="outpost" multiplier="1" sold="false" />
+      <Price locationtype="city" multiplier="0.7" sold="false" />
+      <Price locationtype="research" multiplier="1.1" sold="false" />
+      <Price locationtype="military" multiplier="1.0" minavailable="1" />
+      <Price locationtype="mine" multiplier="1.1" sold="false" />
+    </Price>
+    <Deconstruct time="20"></Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="45">
+      <RequiredSkill identifier="mechanical" level="45" />
+      <RequiredSkill identifier="electrical" level="55" />
+      <RequiredItem identifier="aluminium" />
+      <RequiredItem identifier="copper" />
+      <RequiredItem identifier="plastic" />
+      <RequiredItem identifier="fpgacircuit" />
+    </Fabricate>
+    <Upgrade gameversion="0.9.2.0" scale="0.5" />
+    <InventoryIcon texture="%ModDir%/players_icons.png" sourcerect="256,0,64,40" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/players_sprites.png" sourcerect="270,0,51,33" depth="0.55" origin="0.5,0.5" />
+    <Body width="51" height="33" />
+    <LightComponent LightColor="0.0,0.0,0.0,0.0" range="1" powerconsumption="0" blinkfrequency="0" IsOn="false" canbeselected="false"></LightComponent>
+    <CustomInterface canbeselected="true" drawhudwhenequipped="true" allowuioverlap="true" msg="Equip to control">
+      <GuiFrame relativesize="0.10,0.07" anchor="CenterLeft" pivot="BottomLeft" relativeoffset="0.006,-0.05" style="ItemUI" />
+      <TickBox text="Play">
+        <StatusEffect type="OnUse" targettype="This" IsOn="true">
+          <Conditional IsOn="false" />
+          <sound file="%ModDir%/sound_effects/boombox_play_cassette.ogg" type="OnUse" range="300" volume="1.0" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" targettype="This" IsOn="false">
+          <Conditional IsOn="true" />
+          <sound file="%ModDir%/sound_effects/boombox_play_cassette.ogg" type="OnUse" range="300" volume="1.0" />
+          <Use />
+        </StatusEffect>
+      </TickBox>
+    </CustomInterface>
+    <Holdable slots="RightHand,LeftHand,Any" holdpos="5,-75" holdangle="0" aimpos="0,-45" handle1="-5,15" handle2="-5,15" swingamount="25,8" swingspeed="0.5" swingwhenusing="true" msg="ItemMsgPickupSelect">
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </Holdable>
+    <ItemContainer itempos="3,-3" hideitems="false" drawinventory="true" capacity="1" maxstacksize="1" slotsperrow="1" iteminterval="0,0" itemrotation="180" canbeselected="false" containedspritedepth="0.6">
+      <StatusEffect type="OnUse" targettype="Contained">
+        <Use />
+      </StatusEffect>
+      <Containable items="cassette">
+      </Containable>
+    </ItemContainer>
+  </Item>
+
+  <!-- Cassette Tapes -->
+
+  {% for tape in tapes %}
+  <Item name="Tape: {{ tape.name }}" identifier="{% if config['slug'] != "sunken_tapes" %}{{ config["slug"] }}-{% endif %}cassette-{{ tape.identifier }}" category="Equipment" maxstacksize="8" Tags="smallitem,cassette" cargocontaineridentifier="metalcrate" scale="0.5" isshootable="true" impacttolerance="1.4" >
+    <PreferredContainer primary="abandonedcrewcab" spawnprobability="0.05" />
+    <PreferredContainer primary="outpostcrewcabinet" minamount="0" maxamount="1" spawnprobability="0.05" />
+    <Price baseprice="{{ tape.price }}" soldeverywhere="false">{% for location in ["outpost", "city", "research", "military", "mine"] %}
+      <Price locationtype="{{ location }}" multiplier="{{ tape.multipliers[loop.index0] }}" sold="{{ tape.sold[loop.index0] }}" minavailable="1" />{% endfor %}
+    </Price>
+    <Deconstruct time="10"></Deconstruct>
+    <Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="{{ song_lengths[loop.index0]*0.5 }}">
+      <RequiredSkill identifier="mechanical" level="25" />
+      <RequiredSkill identifier="electrical" level="45" />
+      <RequiredItem identifier="{% if config['slug'] != "sunken_tapes" %}{{ config["slug"] }}-{% endif %}cassette-{{ tape.identifier }}" mincondition="0.25" usecondition="true" />
+      <RequiredItem identifier="{% if config['slug'] != "sunken_tapes" %}{{ config["slug"] }}-{% endif %}cassette-blank" />
+      <RequiredItem identifier="fpgacircuit" />
+    </Fabricate>
+    <InventoryIcon texture="%ModDir%/icons.png" sourcerect="{{ 64 * positions[loop.index0]['column'] }},{{ 41 * positions[loop.index0]['row'] }},64,41" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/sprites.png" sourcerect="{{ 33 * positions[loop.index0]['column'] }},{{ 21 * positions[loop.index0]['row'] }},33,21" depth="0.6" origin="0.5,0.5" />
+    <Body width="33" height="21" />
+    <Throwable slots="Any,RightHand,LeftHand" holdpos="5,-65" holdangle="0" handle1="0,1" throwforce="4.0" aimpos="35,-10" msg="Aim to throw">
+      <StatusEffect type="OnImpact" target="This" Condition="-5.0" disabledeltatime="true">
+        <sound file="%ModDir%/sound_effects/cassette_drop.ogg" range="500" volume="1.0" />
+      </StatusEffect>
+    </Throwable>
+    <CustomInterface canbeselected="true" drawhudwhenequipped="true" allowuioverlap="true" msg="Equip to inspect">
+      <GuiFrame relativesize="{{ 512.0 / config['resolution_x'] }},{{ 328.0 / config['resolution_y'] }}" anchor="CenterRight" pivot="CenterRight" style="{{ config['slug'] }}_cover_{{ tape.identifier }}" />
+    </CustomInterface>
+    <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" removecontaineditemsondeconstruct="true" showcontainedstateindicator="false">
+      <StatusEffect type="OnNotContained" targettype="Contained">
+        <Use />
+      </StatusEffect>
+      <StatusEffect type="OnContained" targettype="This">
+        <Conditional hastag="!eq sunken-tapes-player" targetcontainer="true" />
+        <Use />
+      </StatusEffect>
+      <StatusEffect type="OnContained" targettype="This" comparison="And">
+        <Conditional hastag="boombox" targetcontainer="true" />
+        <Conditional IsOn="true" targetcontainer="true" />
+        <SpawnItem identifiers="{% if config['slug'] != "sunken_tapes" %}{{ config["slug"] }}-{% endif %}song-{{ tape.identifier }}" spawnposition="ThisInventory" />
+      </StatusEffect>
+      <StatusEffect type="OnContained" targettype="This" comparison="And">
+        <Conditional hastag="walkman" targetcontainer="true" />
+        <Conditional IsOn="true" targetcontainer="true" />
+        <SpawnItem identifiers="{% if config['slug'] != "sunken_tapes" %}{{ config["slug"] }}-{% endif %}song-walkman-{{ tape.identifier }}" spawnposition="ThisInventory" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" targettype="Contained">
+        <Use />
+      </StatusEffect>
+      <Containable items="song" />
+    </ItemContainer>
+    <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+
+  {% endfor %}
+
+  <!-- SONGS -->
+
+  {% for tape, delta in zip(tapes, affliction_delta) %}
+  <Item name="Song: {{ tape.name }}" identifier="{% if config['slug'] != "sunken_tapes" %}{{ config["slug"] }}-{% endif %}song-{{ tape.identifier }}" Tags="song" category="Misc">
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" depth="0.8" sourcerect="0,160,4,4" origin="0.5,0.5" />
+    <Body width="48" height="48" />
+    <InventoryIcon texture="Content/Items/Electricity/signalcomp.png" sourcerect="0,160,4,4" origin="0.5,0.5" />
+    <ItemComponent>
+      <StatusEffect type="Always" target="This">
+        <sound file="%ModDir%/music/{{ tape.identifier }}.ogg" type="OnUse" range="1000" loop="true" volume="1.0" />
+      </StatusEffect>{% if tape.buffs %}
+      <StatusEffect type="Always" target="NearbyCharacters" range="1000">{% for buff in tape.buffs %}
+        {% if buff == "psychosis" %}<Affliction identifier="{{ buff }}" strength= "{{ '%0.4f' % (tape.buff_multiplier*(delta + 0.1)) }}" />{% else %}<Affliction identifier="{{ buff }}" strength= "{{ '%0.4f' % (tape.buff_multiplier*(delta*4 + 1)) }}" />{% endif %}{% endfor %}
+      </StatusEffect>{% endif %}
+      <StatusEffect type="OnNotContained" targettype="This">
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnUse" targettype="This">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+
+  <Item name="Song (Walkman): {{ tape.name }}" identifier="{% if config['slug'] != "sunken_tapes" %}{{ config["slug"] }}-{% endif %}song-walkman-{{ tape.identifier }}" Tags="song" category="Misc">
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" depth="0.8" sourcerect="0,160,4,4" origin="0.5,0.5" />
+    <Body width="48" height="48" />
+    <InventoryIcon texture="Content/Items/Electricity/signalcomp.png" sourcerect="0,160,4,4" origin="0.5,0.5" />
+    <ItemComponent>
+      <StatusEffect type="Always" target="This">
+        <sound file="%ModDir%/music/{{ tape.identifier }}-walkman.ogg" type="OnUse" range="200" loop="true" volume="1.0" />
+      </StatusEffect>{% if tape.buffs %}
+      <StatusEffect type="Always" target="NearbyCharacters" range="200">{% for buff in tape.buffs %}
+        {% if buff == "psychosis" %}<Affliction identifier="{{ buff }}" strength= "{{ '%0.4f' % (tape.buff_multiplier*(delta + 0.1)*0.5) }}" />{% else %}<Affliction identifier="{{ buff }}" strength= "{{ '%0.4f' % (tape.buff_multiplier*(delta*4 + 1)*0.5) }}" />{% endif %}{% endfor %}
+      </StatusEffect>{% endif %}
+      <StatusEffect type="OnNotContained" targettype="This">
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnUse" targettype="This">
+        <Remove />
+      </StatusEffect>
+    </ItemComponent>
+  </Item>
+
+  {% endfor %}
+
+
+  <!-- tape box -->
+
+  <Item name="Cassette Tape Box" identifier="{% if config['slug'] != "sunken_tapes" %}{{ config["slug"] }}-{% endif %}cassette-tape-box" category="Equipment" tags="smallitem,mobilecontainer,tool" cargocontaineridentifier="" showcontentsintooltip="true" Scale="0.5" fireproof="true" description="" impactsoundtag="impact_metal_heavy">
+    <PreferredContainer secondary="wreckstoragecab" spawnprobability="0.06" />
+    <PreferredContainer primary="outpostcrewcabinet" minamount="0" maxamount="1" spawnprobability="0.2" />
+    <Deconstruct time="10">
+      <Item identifier="steel" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="20">
+      <RequiredSkill identifier="mechanical" level="20" />
+      <Item identifier="steel" />
+    </Fabricate>
+    <Price baseprice="75" >
+      <Price locationtype="outpost" multiplier="1" minavailable="1" />
+      <Price locationtype="city" multiplier="0.9" minavailable="1" />
+      <Price locationtype="research" multiplier="1.25" minavailable="1" />
+      <Price locationtype="military" multiplier="1.25" minavailable="1" />
+      <Price locationtype="mine" multiplier="1.25" minavailable="1" />
+    </Price>
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="640,256,64,64" origin="0.5,0.6" />
+    <Sprite texture="Content/Items/Tools/tools.png" sourcerect="314,1,94,74" origin="0.5,0.5" />
+    <Body width="90" height="60" density="20" />
+    <MeleeWeapon slots="RightHand,LeftHand,Any" controlpose="true" aimpos="45,10" handle1="0,10" handle2="0,10" holdangle="90" reload="1" range="50" combatpriority="6" msg="ItemMsgPickUpSelect">
+      <Attack structuredamage="10" itemdamage="5" stun="0.6" targetimpulse="2">
+        <Affliction identifier="blunttrauma" strength="2" />
+        <Sound file="Content/Items/Weapons/Smack2.ogg" range="800" />
+      </Attack>
+    </MeleeWeapon>
+    <ItemContainer capacity="24" keepopenwhenequipped="true" movableframe="true">
+      <Containable items="cassette" />
+    </ItemContainer>
+    <aitarget sightrange="1000" soundrange="1000" fadeouttime="2" />
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+
+</Items>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+{% if config['slug'] != "sunken_tapes" %}<!--This mod is based on Sunken Tapes. See https://git.kompot.si/jaka/barotrauma-sunken-tapes and https://steamcommunity.com/sharedfiles/filedetails/?id=2616577901 for the source material and code generator.-->{% else %}<!--Code licensed under GPLv3 and generated with a script available at https://git.kompot.si/jaka/barotrauma-sunken-tapes-->{% endif %}
+<contentpackage name="{{ config['name'] }}" modversion="1.0.1" corepackage="false" gameversion="0.20.15.0" {% if config['slug'] == "Sunken Tapes" %}steamworkshopid="2616577901"{% endif %}>
+  <Item file="%ModDir%/{{ config['slug'] }}.xml" />
+  <UIStyle file="%ModDir%/{{ config['slug'] }}_style.xml" />
+  <None file="%ModDir%/PreviewImage.png" />
+  <None file="%ModDir%/icons.png" />
+  <None file="%ModDir%/covers.png" />
+  <None file="%ModDir%/sprites.png" />
+  <None file="%ModDir%/players_icons.png" />
+  <None file="%ModDir%/players_sprites.png" />{% for tape in tapes %}
+  <None file="%ModDir%/music/{{ tape["identifier"] }}.ogg" />
+  <None file="%ModDir%/music/{{ tape["identifier"] }}-walkman.ogg" />{% endfor %}
+  <None file="%ModDir%/sound_effects/boombox_insert_cassette.ogg" />
+  <None file="%ModDir%/sound_effects/boombox_play_cassette.ogg" />
+  <None file="%ModDir%/sound_effects/cassette_drop.ogg" />
+</contentpackage>
