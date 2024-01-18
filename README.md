@@ -1,5 +1,8 @@
 # Sunken Tapes
 
+Рефакторинг нерабочего репозитория от оригинального автора - https://git.kompot.si/jaka/barotrauma-sunken-tapes/src/branch/master
+Нужно скачать и закинуть в репозиторий - https://disk.yandex.ru/d/g5aXsPdO7z8Pcw
+
 Sunken Tapes mod for Barotrauma
 
 There's a Boombox.
